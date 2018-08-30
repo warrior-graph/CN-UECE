@@ -20,9 +20,14 @@ def bisection(i, j, f, eps=10e-4):
         
         return m
 
+def secant ():
+	pass
+
+def newton_Raphson (): 
+	pass
+
 def main():
     print(round(bisection(-1, 5, f), 3))
-
 
 if __name__ == '__main__':
     main()
