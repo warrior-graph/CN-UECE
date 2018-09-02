@@ -1,11 +1,9 @@
 import math
 
+from function_box import f
 from bisection import bisection
 from secant import secant
 from newton_raphson import newton_raphson
-
-def f(d, a = 1):
-    return a * math.exp(d) - 4 * d**2
 
 def main():
     print(round(bisection(-1, 5, f), 3))
