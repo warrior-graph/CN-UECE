@@ -2,7 +2,7 @@ import math
 
 from bisection import bisection
 from secant import secant
-from newton_Raphson import newton_Raphson
+from newton_raphson import newton_raphson
 
 def f(d, a = 1):
     return a * math.exp(d) - 4 * d**2
