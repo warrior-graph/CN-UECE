@@ -1,7 +1,7 @@
 # Instruções
 
 ## Inicialmente
-- Dar fork no repositório oficial
+- Dar fork no [repositório oficial](https://github.com/warrior-graph/CN-UECE)
 - Clonar seu novo repositório
 
 ` $ git clone https://github.com/<usuario>/CN-UECE `
