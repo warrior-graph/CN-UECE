@@ -1,12 +1,7 @@
 import math
+from function_box import *
 
-def f(d, a = 1):
-    return a * math.exp(d) - 4 * d**2
-
-def f_derived(d, a = 1):
-	return a * math.exp(d) - 8 * d
-
-def newton_raphson (f, e): 
+def newton_raphson (e): 
 	if(0.5 < e):
 		return f(0.5)
 	else:
