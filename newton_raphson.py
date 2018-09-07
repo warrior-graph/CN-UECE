@@ -8,9 +8,9 @@ def newton_raphson (e):
 		aux = 0.5
 		k = 1
 		while(k != 1000):
-			x = aux - (f(0.5)/f_derived(0.5))
-			if(abs(x - aux) > e):
+			x = aux - (f(aux)/f_derived(aux))
+			if(abs(x - aux) > e and abs(f(x)) > e):
 				aux = x
 				k = k + 1
 			else: 
-				return f(x)	
+				return x	
