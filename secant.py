@@ -1,12 +1,8 @@
 import random
 from function_box import f
 
-# Recebe como parâmetro a precisão
-def secant(eps):
-	# Randomiza os valores das aproximações iniciais x0 e x1
-	x0 = random.randrange(1, 10)
-	x1 = random.randrange(1, 10)
-
+# Recebe como parâmetro os valores das aproximações iniciais e a precisão
+def secant(x0, x1, eps):
 	# Se o módulo de f(x0) for menor que o erro, d = x0
 	if abs(f(x0)) < eps:
 		return x0
