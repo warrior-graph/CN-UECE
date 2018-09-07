@@ -1,6 +1,4 @@
-import math
-import random
-from function_box import *
+from function_box import f, f_derived
 
 # Recebe como parâmetros o valor da aproximação inicial e a precisão
 def newton_raphson(x0, eps):

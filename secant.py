@@ -1,4 +1,3 @@
-import random
 from function_box import f
 
 # Recebe como parâmetro os valores das aproximações iniciais e a precisão
