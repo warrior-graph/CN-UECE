@@ -1,9 +1,7 @@
 from function_box import f, f_derived
 
-# Recebe como parâmetros os valores do intervalo (a, b) e a precisão
-def newton_raphson(a, b, eps, func=f, func_derived=f_derived):
-	# Utiliza como aproximação inicial a média entre os valores do intervalo
-	x0 = (a + b) / 2
+# Recebe como parâmetros o valor da aproximação inicial e a precisão
+def newton_raphson(x0, eps, func=f, func_derived=f_derived):
 	# Se o módulo de f(x0) for menor que o erro, d = x0
 	if abs(func(x0)) < eps:
 		return x0

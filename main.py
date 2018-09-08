@@ -15,7 +15,7 @@ def main():
         (a, b) = isolation(amp)
         print('\nIsolation: ', (a, b))
         print('Bissection: ', round(bisection(a, b, eps), 4))
-        print('Newton-Raphson: ',round(newton_raphson(a, b, eps), 4))
+        print('Newton-Raphson: ',round(newton_raphson((a + b) / 2, eps), 4))
         print('Secant: ',round(secant(a, b, eps), 4))
 
 
