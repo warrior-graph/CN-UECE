@@ -1,3 +1,7 @@
+# Cálculo Numérico - Trabalho 1
+
+![Enunciado do trabalho](https://i.imgur.com/Jskdr7w.png)
+
 # Instruções
 
 ## Inicialmente
