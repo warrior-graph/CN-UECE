@@ -1,4 +1,5 @@
 from function_box import f
+from relative_error import relative_error
 
 # Recebe como parâmetro os valores das aproximações iniciais e a precisão
 def secant(x0, x1, eps, func=f):
@@ -21,7 +22,12 @@ def secant(x0, x1, eps, func=f):
 		# x2 e x1 for menor que o erro, d = x2
 		if abs(func(x2)) < eps or abs(x2 - x1) < eps:
 			return x2
-	
+		
+		# Valor aproximado para o calculo do erro relativo
+		x_aprox = x1
+		# Calcula o erro relativo 
+		relative_e = relative_error(x_aprox,x2)
+		
 		# Caso raiz não seja encontrada, atualiza os valores das aproximações
 		x0 = x1
 		x1 = x2
