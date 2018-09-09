@@ -1,4 +1,5 @@
 from function_box import f
+from relative_error import relative_error
 
 # Recebe como parâmetros os valores do intervalo (a, b) e da precisão
 def bisection(a, b, eps, func=f):
@@ -9,11 +10,18 @@ def bisection(a, b, eps, func=f):
     # M recebe f(a), sendo a o do intervalo inicial
     M = f(a)
 
+    # x_aprox recebe o valor aproximado de x
+    x_aprox = 0
+
     # Número de iterações k vai de 1 a 1000 ou até encontrar a raiz d
     for k in range(1, 1001):
         # A aproximação x recebe a média da soma de a e b
         x = (a + b) * 0.5
-
+    
+        if(k > 1):
+            # Calcula o erro relativo
+            relative_e = relative_error(x,x_aprox)
+            
         # Se a multiplicação de M por f(x) for maior que zero, atualiza-se
         # o valor de a
         if (M * func(x)) > 0:
@@ -27,3 +35,7 @@ def bisection(a, b, eps, func=f):
         # e passa-se para a próxima iteração
         else:
             b = x
+
+        # Recebe a raiz obtida na iteração usar no erro absoluto 
+        # da proxima iteração
+        x_aprox = x    

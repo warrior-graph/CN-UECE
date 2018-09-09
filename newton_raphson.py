@@ -1,4 +1,5 @@
 from function_box import f, f_derived
+from relative_error import relative_error
 
 # Recebe como parâmetros o valor da aproximação inicial e a precisão
 def newton_raphson(x0, eps, func=f, func_derived=f_derived):
@@ -13,7 +14,10 @@ def newton_raphson(x0, eps, func=f, func_derived=f_derived):
 	for k in range(1, 1001):
 		# Nova aproximação x1 é calculada a partir da função de iteração do
 		# método com FL
-
+		
+		# Valor aproximado para o calculo do erro relativo
+		x_aprox = x0
+		
 		# Se o módulo de func'(x0) for maior que o erro, usa-se FL = func'(x0) e
 		# atualiza o valor de xw
 		if abs(func_derived(x0)) > eps:
@@ -22,7 +26,10 @@ def newton_raphson(x0, eps, func=f, func_derived=f_derived):
 		# Senão, usa-se FL = func'(xw)
 		else:
 			x1 = x0 - func(x0)/func_derived(xw)
-
+		
+		# Valor do erro relativo
+		relative_e = relative_error(x1,x_aprox)
+		
 		# Se o módulo de func(x1) ou o módulo da diferença entre as aproximações
 		# x1 e x0 for menor que o erro, d = x1
 		if abs(func(x1)) < eps or abs(x1 - x0) < eps:
