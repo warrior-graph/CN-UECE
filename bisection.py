@@ -1,5 +1,5 @@
 from function_box import f
-from relative_error import relative_error
+from error_box import relative_error
 
 # Recebe como parâmetros os valores do intervalo (a, b) e da precisão
 def bisection(a, b, eps, func=f):

@@ -1,5 +1,5 @@
 from function_box import f, f_derived
-from relative_error import relative_error
+from error_box import relative_error
 
 # Recebe como parâmetros o valor da aproximação inicial e a precisão
 def newton_raphson(x0, eps, func=f, func_derived=f_derived):

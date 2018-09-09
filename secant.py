@@ -1,5 +1,5 @@
 from function_box import f
-from relative_error import relative_error
+from error_box import relative_error
 
 # Recebe como parâmetro os valores das aproximações iniciais e a precisão
 def secant(x0, x1, eps, func=f):
