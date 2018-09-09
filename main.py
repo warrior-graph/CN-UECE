@@ -14,9 +14,9 @@ def main():
         eps = float(input())
         (a, b) = isolation(amp)
         print('\nIsolation: ', (a, b))
-        print('Bissection: ', round(bisection(a, b, eps), 4))
-        print('Newton-Raphson: ',round(newton_raphson((a + b) * 0.5, eps), 4))
-        print('Secant: ',round(secant(a, b, eps), 4))
+        print('Bissection: ', round(bisection(a, b, eps)[-1], 4))
+        print('Newton-Raphson: ',round(newton_raphson((a + b) * 0.5, eps)[-1], 4))
+        print('Secant: ',round(secant(a, b, eps)[-1], 4))
 
 
 if __name__ == '__main__':
