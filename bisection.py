@@ -15,13 +15,13 @@ def bisection(a, b, eps, func=f):
 
     # Número de iterações k vai de 1 a 1000 ou até encontrar a raiz d
     for k in range(1, 1001):
-        # A aproximação x recebe a média da soma de a e b
-        x = (a + b) * 0.5
+        # A aproximação d recebe a média da soma de a e b
+        d = (a + b) * 0.5
             
-        # Se a multiplicação de M por f(x) for maior que zero, atualiza-se
+        # Se a multiplicação de M por f(d) for maior que zero, atualiza-se
         # o valor de a
-        if (M * func(x)) > 0:
-            a = x
+        if (M * func(d)) > 0:
+            a = d
             # Se a diferença entre b e a for menor que o erro, ou seja, se a
             # amplitude do intervalo atinge a precisão requerida,
             # d = média(a, b)
@@ -31,5 +31,5 @@ def bisection(a, b, eps, func=f):
         # Se o resultado da multiplicação não for maior que zero, atualiza-se b
         # e passa-se para a próxima iteração
         else:
-            iter_values.append(x)
-            b = x
+            iter_values.append(d)
+            b = d
