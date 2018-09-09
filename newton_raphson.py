@@ -1,14 +1,16 @@
 from function_box import f, f_derived
-
+from error_box import re_per_method
+from write_archive import write_data
+from graphic import generate_plot
 # Recebe como parâmetros o valor da aproximação inicial e a precisão
-def newton_raphson(d0, eps, func=f, func_derived=f_derived):
+def newton_raphson(d0, eps, func = f, func_derived = f_derived):
 	# Inicializa a lista onde serão salvas as aproximações de d
 	iter_values = []
 
 	# Se o módulo de f(d0) for menor que o erro, d = d0
 	if abs(func(d0)) < eps:
 		iter_values.append(d0)
-		return iter_values
+		ans = iter_values
 	
 	# Inicializa dw com o valor da aproximação inicial
 	dw = d0
@@ -33,7 +35,13 @@ def newton_raphson(d0, eps, func=f, func_derived=f_derived):
 		# Se o módulo de func(x1) ou o módulo da diferença entre as aproximações
 		# x1 e x0 for menor que o erro, d = x1 = último valor salvo na lista
 		if abs(func(d1)) < eps or abs(d1 - d0) < eps:
-			return iter_values
+			ans = iter_values
 
 		# Caso a raiz não seja encontrada, atualiza o valor da aproximação x0
 		d0 = d1
+	re_values = re_per_method(iter_values);
+	File = open("Newton-Raphson", "w")
+	File.close()
+	write_data(iter_values, re_values, "Newton-Raphson")
+	generate_plot("Newton-Raphson")
+	return ans
