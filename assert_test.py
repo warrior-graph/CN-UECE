@@ -11,7 +11,7 @@ def func_derived(x):
 
 # Compara os resultados com os exemplos do livro com 9 casas decimais
 def test_methods():
-    assert round(bisection(0, 1, 1e-3, func), 9) == 0.337402344
-    assert round(newton_raphson(0.5, 1e-4, func, func_derived),9) == 0.337606838
-    assert round(secant(0, 1, 5e-4, func), 9) == 0.337634621 
+    assert round(bisection(0, 1, 1e-3, func)[-1], 9) == 0.337402344
+    assert round(newton_raphson(0.5, 1e-4, func, func_derived)[-1], 9) == 0.337606838
+    assert round(secant(0, 1, 5e-4, func)[-1], 9) == 0.337634621 
 
