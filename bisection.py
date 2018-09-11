@@ -1,7 +1,4 @@
 from function_box import f
-from error_box import re_per_method
-from write_archive import write_data
-from graphic import generate_plot
 
 # Recebe como parâmetros os valores do intervalo (a, b) e da precisão
 def bisection(a, b, eps, func = f):
@@ -11,7 +8,7 @@ def bisection(a, b, eps, func = f):
     # Se a amplitude do intervalo atinge a precisão requerida, d = média(a, b)
 	if (b - a) < eps:
 		iter_values.append((a + b) * 0.5)
-		ans = iter_values
+		return iter_values
 
     # M recebe f(a), sendo a o do intervalo inicial
 	M = f(a)
@@ -30,16 +27,9 @@ def bisection(a, b, eps, func = f):
             # d = média(a, b)
 			if (b - a) < eps:
 				iter_values.append((a + b) * 0.5)
-				ans = iter_values
+				return iter_values
         # Se o resultado da multiplicação não for maior que zero, atualiza-se b
         # e passa-se para a próxima iteração
 		else:
 			iter_values.append(d)
 			b = d
-	re_values = re_per_method(iter_values)
-	File = open("Bisection", "w")
-	File.close()
-	write_data(iter_values, re_values, "Bisection")
-	generate_plot("Bisection")
-	return ans	
-

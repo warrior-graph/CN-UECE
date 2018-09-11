@@ -1,5 +1,7 @@
+from error_box import re_per_method
 # Recebe como argumento uma lista com os dados a serem plotados
-def write_data(iter_values, re_values, file_name):
+def write_data(iter_values, file_name):
+	re_values = (iter_values)
 	plot_data = []
 	for (i, j) in zip(iter_values, re_values):
 		plot_data.append((i, j))
