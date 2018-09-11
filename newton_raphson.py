@@ -1,8 +1,7 @@
 from function_box import f, f_derived
-from error_box import re_per_method
 
 # Recebe como parâmetros o valor da aproximação inicial e a precisão
-def newton_raphson(d0, eps, func = f, func_derived = f_derived):
+def newton_raphson(d0, eps, func=f, func_derived=f_derived):
 	# Inicializa a lista onde serão salvas as aproximações de d
 	iter_values = []
 
