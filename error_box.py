@@ -1,6 +1,6 @@
 # Calcula o erro relativo por iteração
 def relative_error(d, d_aprox):
-    return abs(d - d_aprox) / abs(d_aprox)
+    return abs((d - d_aprox) /(d_aprox))
 
 
 # Calcula o erro relativo para cada iteração de um método, recebendo uma lista
