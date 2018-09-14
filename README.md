@@ -14,16 +14,19 @@
 - Criar virtualenv
 
 ` $ pip3 install virtualenv --user `
+
 ` $ python3 -m virtualenv venv `
 
 - Configuar o ambiente
 
 ` $ source venv/bin/activate `
+
 ` $ pip3 install -r requirements.txt `
 
 - Baixar as dependências: Tkinter
 
 ` $ sudo dnf install python3-tkinter ` (Fedora)
+
 ` $ sudo apt install python3-tk ` (Debian/Ubuntu)
 
 - Rodar o programa
