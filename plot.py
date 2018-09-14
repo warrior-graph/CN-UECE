@@ -1,25 +1,22 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+# Plota as tabelas com os resultados das iterações dos 3 métodos:
+# Bisseção, Newton-Raphson e Secante
+
 
 def dino_plot(data_list):
 
+    # Número da figura
     k = 0
-    
-    # fig, ax = plt.subplots()
-    # fig.patch.set_visible(False)
-    # # fig = plt.figure(k)
-    # fig.patch.set_visible(False)
-    # plt.axis('off')  
-    # ax.axis('off')
-    # ax.axis('tight')
+
+    # Configura os gráficos
     for data in data_list[:3]:
         fig = plt.figure(k)
         fig.patch.set_visible(False)
         plt.axis('off')
-        plt.title('Method ' + data_list[-1][0][k] + ' - Amplitude ' + str(data_list[-1][1]))
-        # ax.axis('off')
-        # ax.axis('tight')
+        plt.title('Method ' + data_list[-1][0][k] +
+                  ' - Amplitude ' + str(data_list[-1][1]))
         columns = ('x', 'f(x)', 'Relative error')
         n = len(data[0])
         m = len(data)
@@ -41,7 +38,9 @@ def dino_plot(data_list):
                   colLabels=columns,
                   loc='center')
         k += 1
+
         # Adjust layout to make room for the table:
         # plt.subplots_adjust(left=0.2, bottom=0.2)
 
+    # Exibe os 3 gráficos
     plt.show()
