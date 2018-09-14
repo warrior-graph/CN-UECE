@@ -51,8 +51,8 @@ def do():
         secant_re = re_per_method(secant_data)
         data_list.append([secant_data, secant_applied, secant_re])
 
-        # Salva na lista os nomes dos métodos e valor da amplitude
-        data_list.append((['Bisection', 'Newton-Raphson', 'Secant'], amp))
+        # Salva na lista os nomes dos métodos, valor da amplitude e intervalo (a, b)
+        data_list.append((['Bisection', 'Newton-Raphson', 'Secant'], amp, a, b, eps))
 
         # Passa os dados para a função responsável pelas tabelas
         dino_plot(data_list)
