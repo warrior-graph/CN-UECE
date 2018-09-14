@@ -1,5 +1,37 @@
 # Cálculo Numérico - Trabalho 1
 
+# Sumário
+- [Como rodar](#como-rodar)
+- [Enunciado](#enunciado)
+- [Instruções](#instru%C3%A7%C3%B5es) (para contribuidores)
+
+# Como rodar
+- Clonar ou fazer download do repositório
+- Ir até a pasta do trabalho
+
+` $ cd <caminho-da-pasta-de-downloads>/cn-uece `
+
+- Criar virtualenv
+
+` $ pip3 install virtualenv --user `
+` $ python3 -m virtualenv venv `
+
+- Configuar o ambiente
+
+` $ source venv/bin/activate `
+` $ pip3 install -r requirements.txt `
+
+- Baixar as dependências: Tkinter
+
+` $ sudo dnf install python3-tkinter ` (Fedora)
+` $ sudo apt install python3-tk ` (Debian/Ubuntu)
+
+- Rodar o programa
+
+` $ python3 main.py `
+
+# Enunciado
+
 ![Enunciado do trabalho](https://i.imgur.com/Jskdr7w.png)
 
 # Instruções
