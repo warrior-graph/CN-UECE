@@ -15,7 +15,7 @@ def func_derived(x, amp):
 
 
 def test_methods():
-    assert round(bisection(0, 1, 1e-3, 1, func)[-1], 9) == 0.337402344
+    assert round(bisection(0, 1, 1e-3, 1, func)[-1][0], 9) == 0.337402344
     assert round(newton_raphson(0.5, 1e-4, 1, func,
-                                func_derived)[-1], 9) == 0.337606838
-    assert round(secant(0, 1, 5e-4, 1, func)[-1], 9) == 0.337634621
+                                func_derived)[-1][0], 9) == 0.337606838
+    assert round(secant(0, 1, 5e-4, 1, func)[-1][0], 9) == 0.337634621
