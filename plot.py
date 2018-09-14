@@ -25,7 +25,7 @@ def dino_plot(data_list):
 
         # Títulos das colunas
         if k:
-            columns = ('d', 'f(d)', 'abs(d1 - d0)', 'Relative error')
+            columns = ('d', 'f(d)', r'$abs(d_k - d_{k-1})$', 'Relative error')
         else:
             columns = ('d', 'f(d)', 'abs(b - a)', 'Relative error')
 

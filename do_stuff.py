@@ -20,22 +20,20 @@ def do():
     # Recebe número de movimentos e precisão
     n = int(input('Insert number of movements:\n'))
     eps = float(input('Insert precision(eps):\n'))
-    #n, eps = 1, 1e-5
 
     # Para cada movimento
     for k in range(n):
         # Recebe o valor da amplitude
         amp = float(input(str(k + 1) + ': Insert amplitude:\n'))
-        #amp = 1
 
         # Calcula o intervalo
         (a, b) = isolation(amp)
-        #rows = ('x', 'f(x)', 'Relative error')
+        
 
         # Inicializa lista que conterá os dados das tabelas dos 3 métodos
         data_list = []
 
-        # Calcula e salva aproximações de d, f(d) e erros relativos
+        # Calcula e salva aproximações de d, abs(b - a) ou abs(dk - d[k-1]), f(d) e erros relativos
         bisection_data, bisection_abs_diff = zip(*bisection(a, b, eps, amp))
         bisection_applied = [f(x, amp) for x in bisection_data]
         bisection_re = re_per_method(bisection_data)
