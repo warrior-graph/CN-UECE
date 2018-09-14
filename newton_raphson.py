@@ -7,12 +7,14 @@ from function_box import f, f_derived
 
 
 def newton_raphson(d0, eps, amp, func=f, func_derived=f_derived):
-    # Inicializa a lista onde serão salvas as aproximações de d
+    # Inicializa a lista onde serão salvas as aproximações de d e o módulo de
+    # (d1-d0) a cada iteração e a variável d1
     iter_values = []
+    d1 = 0
 
     # Se o módulo de f(d0) for menor que o erro, d = d0
     if abs(func(d0, amp)) < eps:
-        iter_values.append(d0)
+        iter_values.append(d0, abs(d1 - d0))
         return iter_values
 
     # Inicializa dw com o valor da aproximação inicial
@@ -33,7 +35,7 @@ def newton_raphson(d0, eps, amp, func=f, func_derived=f_derived):
             d1 = d0 - func(d0, amp)/func_derived(dw, amp)
 
         # Adiciona o valor no final da lista de aproximações calculadas
-        iter_values.append(d1)
+        iter_values.append(d1, abs(d1 - d0))
 
         # Se o módulo de func(d1) ou o módulo da diferença entre as aproximações
         # d1 e d0 for menor que o erro, d = d1 = último valor salvo na lista

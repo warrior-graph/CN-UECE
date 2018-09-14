@@ -6,12 +6,13 @@ from function_box import f
 
 
 def bisection(a, b, eps, amp, func=f):
-    # Inicializa a lista onde serão salvas as aproximações de d
+    # Inicializa a lista onde serão salvas as aproximações de d e o módulo de
+    # b-a a cada iteração
     iter_values = []
 
     # Se a amplitude do intervalo atinge a precisão requerida, d = média(a, b)
     if (b - a) < eps:
-        iter_values.append((a + b) * 0.5)
+        iter_values.append((a + b) * 0.5, abs(b - a))
         return iter_values
 
     # M recebe f(a), sendo a o do intervalo inicial
@@ -30,11 +31,11 @@ def bisection(a, b, eps, amp, func=f):
             # Se b-a for menor que o erro, ou seja, se a amplitude do intervalo
             # atinge a precisão requerida, d = média(a, b)
             if (b - a) < eps:
-                iter_values.append((a + b) * 0.5)
+                iter_values.append((a + b) * 0.5, abs(b-  a))
                 return iter_values
                 
         # Se o resultado da multiplicação não for maior que zero, atualiza-se b
         # e passa-se para a próxima iteração
         else:
-            iter_values.append(d)
+            iter_values.append(d, abs(b - a))
             b = d
