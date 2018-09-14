@@ -1,6 +1,8 @@
 from function_box import f
 
-# Recebe como parâmetros os valores do intervalo (a, b) e da precisão
+# Método da Bisseção
+# Recebe como parâmetros os valores do intervalo (a, b), o valor da
+# precisão (eps), a amplitude (amp) e a função f
 
 
 def bisection(a, b, eps, amp, func=f):
@@ -15,8 +17,8 @@ def bisection(a, b, eps, amp, func=f):
     # M recebe f(a), sendo a o do intervalo inicial
     M = func(a, amp)
 
-    # Número de iterações k vai de 1 a 1000 ou até encontrar a raiz d
-    for k in range(1, 1001):
+    # Número de iterações vai de 1 a 1000 ou até encontrar a raiz d
+    for _ in range(1, 1001):
         # A aproximação d recebe a média da soma de a e b
         d = (a + b) * 0.5
 
@@ -24,12 +26,13 @@ def bisection(a, b, eps, amp, func=f):
         # o valor de a
         if (M * func(d, amp)) > 0:
             a = d
-            # Se a diferença entre b e a for menor que o erro, ou seja, se a
-            # amplitude do intervalo atinge a precisão requerida,
-            # d = média(a, b)
+
+            # Se b-a for menor que o erro, ou seja, se a amplitude do intervalo
+            # atinge a precisão requerida, d = média(a, b)
             if (b - a) < eps:
                 iter_values.append((a + b) * 0.5)
                 return iter_values
+                
         # Se o resultado da multiplicação não for maior que zero, atualiza-se b
         # e passa-se para a próxima iteração
         else:
