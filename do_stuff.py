@@ -36,20 +36,20 @@ def do():
         data_list = []
 
         # Calcula e salva aproximações de d, f(d) e erros relativos
-        bisection_data = bisection(a, b, eps, amp)
+        bisection_data, bisection_abs_diff = zip(*bisection(a, b, eps, amp))
         bisection_applied = [f(x, amp) for x in bisection_data]
         bisection_re = re_per_method(bisection_data)
-        data_list.append([bisection_data, bisection_applied, bisection_re, ])
+        data_list.append([bisection_data, bisection_applied, bisection_abs_diff, bisection_re])
 
-        nr_data = newton_raphson((a + b) * 0.5, eps, amp)
+        nr_data, nr_abs_diff = zip(*newton_raphson((a + b) * 0.5, eps, amp))
         nr_applied = [f(x, amp) for x in nr_data]
         nr_re = re_per_method(nr_data)
-        data_list.append([nr_data, nr_applied, nr_re])
+        data_list.append([nr_data, nr_applied, nr_abs_diff, nr_re])
 
-        secant_data = secant(a, b, eps, amp)
+        secant_data, secant_abs_diff = zip(*secant(a, b, eps, amp))
         secant_applied = [f(x, amp) for x in secant_data]
         secant_re = re_per_method(secant_data)
-        data_list.append([secant_data, secant_applied, secant_re])
+        data_list.append([secant_data, secant_applied, secant_abs_diff, secant_re])
 
         # Salva na lista os nomes dos métodos, valor da amplitude e intervalo (a, b)
         data_list.append((['Bisection', 'Newton-Raphson', 'Secant'], amp, a, b, eps))
