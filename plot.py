@@ -18,7 +18,7 @@ def dino_plot(data_list):
         # Título da tabela (método, fórmula, amplitude, intervalo, epsilon)
         plt.title('Method ' + data_list[-1][0][k] + '\n' +
                   r'$f(d) = amp \times e^d - 4 \times d^2$' + '\n' +
-                  r'$amp = $' + str(data_list[-1][1]) + 
+                  r'$amp = $' + str(data_list[-1][1]) +
                   r'$,\/I = [$' + str(data_list[-1][2]) + r'$, $' +
                   str(data_list[-1][3]) + r'$]$' +
                   r'$,\/\varepsilon = $' + str(data_list[-1][4]))
