@@ -19,7 +19,7 @@
 
 - Configuar o ambiente
 
-` $ source venv/bin/activate `
+` $ source venv/bin/activate ` (comando necessário para todas as vezes que for acessar de uma nova aba do terminal)
 
 ` $ pip3 install -r requirements.txt `
 
