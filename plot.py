@@ -24,7 +24,10 @@ def dino_plot(data_list):
                   r'$,\/\varepsilon = $' + str(data_list[-1][4]))
 
         # Títulos das colunas
-        columns = ('x', 'f(x)', 'Relative error')
+        if k:
+            columns = ('d', 'f(d)', 'abs(d1 - d0)', 'Relative error')
+        else:
+            columns = ('d', 'f(d)', 'abs(b - a)', 'Relative error')
 
         # Número de linhas (n) e colunas (m)
         n = len(data[0])
