@@ -15,7 +15,7 @@
 
 ` $ pip3 install virtualenv --user `
 
-` $ python3 -m virtualenv venv `
+` $ python3 -m virtualenv --no-site-packages -p python3 venv `
 
 - Configuar o ambiente
 
